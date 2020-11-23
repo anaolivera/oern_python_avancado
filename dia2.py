@@ -88,6 +88,47 @@ print('Existem', 6, 'membros dos Monty Python', sep=' ')
 print('Existem', 6, 'membros dos Monty Python', sep=None)
 print('Existem', 6, 'membros dos Monty Python', sep='\n')
 
+#%% Tratemento de erros e excepções
 
+(x,y)=(5,0)
+try:
+    z=x/y
+except ZeroDivisionError:
+    print("divisao por zero")
+
+#loop try except    
+while True:
+    try:
+        n=input("Introduza um número inteiro: ")
+        n=int(n)
+        break
+    except ValueError:
+        print("Inteiro não válido! Tente novamente...")
+print("Excelente, introduziu um número inteiro com sucesso!")
+
+# try except and finally
+try:
+    x=float(input("Introduza um número: "))
+    inverse = 1.0/x
+except ValueError:
+    print("Deveria ter introduzido int ou float")
+except ZeroDivisionError:
+    print("Infinito")
+finally:
+    print("Poderá levantar ou nao uma excepção")
+
+#controlo de erros com if, elif, else
+
+def myfunc (x=None):
+    result=""
+    if x is None:
+        result = "Nenhum argumento dado"
+    elif x==0:
+        result ="Zero"
+    elif 0<x<=3:
+        result="x está entre 0 e 3"
+    else:
+        result="x é maior que 3"
+    return result
 
 
